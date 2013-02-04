@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/work/android/ics/.repo'
+let g:netrw_dirhist_2='/home/droid4u/tmp'
+let g:netrw_dirhist_3='/home/droid4u/tmp/.git'
+let g:netrw_dirhist_4='/work/gerrit/learn_python'
+let g:netrw_dirhist_5='/work/gcc-4.3.6/INSTALL'
+let g:netrw_dirhist_6='/home/droid4u/.repoconfig'
+let g:netrw_dirhist_7='/home/droid4u/.repoconfig/gnupg'
