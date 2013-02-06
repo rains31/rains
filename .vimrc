@@ -551,11 +551,11 @@ map <silent> <F3> :TlistToggle<cr>
 
 let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"
-"Bundle 'gmarik/vundle'
-"filetype plugin indent on
+if isdirectory(expand('~/.vim/bundle/vundle'))
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+endif
 
 let g:PythonAutoAddImports = 1
 " vimrc file for following the coding standards specified in PEP 7 & 8.
