@@ -15,6 +15,10 @@ This is my personal vimrc that anyone can get it.
      git submodule init
      git submodule update
      ```
+     Or, maybe you would love to do it all by one step:
+     ```
+     git clone https://github.com/icocoa/icocoa-vimrc.git vimrc --recursive
+     ```
 
 2. Configure it:
 
@@ -30,6 +34,5 @@ This is my personal vimrc that anyone can get it.
 
     ```
     cd vimrc
-    git submodule foreach git pull origin master
     git submodule update
     ```
