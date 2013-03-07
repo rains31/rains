@@ -7,7 +7,7 @@ This is my personal vimrc that anyone can get it.
 1. Get it:
 
      ```
-     git clone https://github.com/icocoa/icocoa-vimrc.git
+     git clone https://github.com/icocoa/icocoa-vimrc.git vimrc
      ```
      It takes `vim vundle` with `git submodule`, if you want to use it:
 
@@ -21,12 +21,15 @@ This is my personal vimrc that anyone can get it.
     ```
     cp -a vimrc/.vim vimrc/.vimrc ~/
     ```
-    before this, please backup your own data.
+    before this, please backup your own data, then install bundles:
+    ```
+    vim +BundleInstall +qall
+    ```
 
 3. Update it:
 
     ```
-    cd repo_dir
+    cd vimrc
     git submodule foreach git pull origin master
     git submodule update
     ```

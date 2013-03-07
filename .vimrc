@@ -555,6 +555,18 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     Bundle 'gmarik/vundle'
+    " Automatically opens popup menu for completions.
+    Bundle 'vim-scripts/AutoComplPop'
+    " A tree explorer plugin for vim.
+    Bundle 'scrooloose/nerdtree'
+    " Mirror of the official Google go vim support.
+    Bundle 'ralph/go.vim'
+    " Tab-complete your Python code.
+    Bundle 'vim-scripts/Pydiction'
+    " A windows style IDE for Vim 6.0.
+    Bundle 'vim-scripts/winmanager'
+    " Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc).
+    Bundle 'vim-scripts/taglist.vim'
 endif
 
 let g:PythonAutoAddImports = 1
