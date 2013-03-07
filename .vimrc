@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""
 " =>General settings
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Set help window height
 set helpheight=15
 
@@ -39,11 +39,11 @@ set showcmd
 
 "Allow virtual editing in Visual block mode
 set virtualedit=block
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 "=> Colors and Font
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Enable synatx hl, if the terminal supports colors
 if &t_Co > 1
 	syntax enable
@@ -86,18 +86,18 @@ if has("gui_running")
 		set cursorline
 	endif
 endif
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Fileformat
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Favorite fileformats
 set ffs=unix,dos,mac
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => VIM user interface
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Set 7 lines to the cursor - when moving vertically
 set scrolloff=7
 
@@ -154,11 +154,11 @@ set mat=4
 
 "Highlight search thing
 set hlsearch
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Statusline
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Format the statusline
 "Nice statusbar
 set laststatus=2
@@ -211,12 +211,11 @@ if has('title') && (has('gui_running') || &title)
 	set titlestring+=%h%m%r%w " flag
 	set titlestring+=\ -\ %{v:progname} " program name
 endif
-
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Moving around and tab
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Actually, the tab does not switch buffers, but my arrow bclose function ca be found in "Buffer related" section
 
 "Tab configuration
@@ -230,10 +229,11 @@ endif
 if exists("&showtabline")
 	set stal=2
 endif
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 "Parenthesis/bracket expanding
 """"""""""""""""""""""""""""""""""""
+"{{{
 vnoremap $p <Esc>`>a)<Esc>`<i(<Esc>
 vnoremap $b <Esc>`>a]<Esc>`<i[<Esc>
 vnoremap $r <Esc>`>a}<Esc>`<i{<Esc>
@@ -241,31 +241,30 @@ vnoremap $a <Esc>`>a><Esc>`<i<<Esc>
 vnoremap $q <Esc>`>a"<Esc>`<i"<Esc>
 vnoremap $$ <Esc>`>a'<Esc>`<i'<Esc>
 vnoremap $c <Esc>`>o*/<Esc>`<O/*<Esc>
-
+"}}}
 """""""""""""""""""""""""""""""""""""
 " => General Abbrev
 """"""""""""""""""""""""""""""""""""""
-
+"{{{
 "My information
 iabbrev xdate <c-r>=strftime("%Y %b %d")<CR>
-"iabbrev xauthor John Hsing(tsyj2007@gmail.com)
-iabbrev xauthor John Hsing(tsyj2007@gmail.com)
-
+"iabbrev xauthor John Hsing(douglarek@outlook.com)
+iabbrev xauthor John Hsing(douglarek@outlook.com)
+"}}}
 """""""""""""""""""""""""""""""""""""""
 " => Editing mappings etc.
 """""""""""""""""""""""""""""""""""""""
-
+"{{{
 "Move a line of text using control
 nmap <Leader>j  mz:move+<CR>`z
 nmap <Leader>k  mz:move-2<CR>`z
 vmap <Leader>j  :move'>+<CR>`<my`>mzgv`yo`z
 vmap <Leader>k  :move'<-2<CR>`>my`<mzgv`yo`z
-
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " " => General Autocommand
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 " some general completions
 autocmd FileType c,cpp iabbrev #i	#include
 " autocmd FileType c,cpp,java,sh,perl inoremap {	{<CR>}<Esc>O
@@ -277,11 +276,11 @@ autocmd FileType c,cpp,java,sh,perl inoremap " ""<Left>
 autocmd FileType c,cpp,java inoremap ( ()<Left>
 " autocmd FileType c,cpp,java,sh,perl inoremap [ []<Left>
 autocmd FileType c,cpp,java,perl inoremap [ []<Left>
-
+"}}}
 """""""""""""""""""""""""""""""""""""
 " => Buffer realted
 """""""""""""""""""""""""""""""""""""
-
+"{{{
 "Open a dummy buffer for paste
 map <Leader>q :e ~/buffer<CR>
 
@@ -295,19 +294,20 @@ map <F9> ggVGg?
 "map <Right> :bn<CR>
 "map <Left> :bp<CR>
 "map <Down> :bdelete<CR>
-
+"}}}
 """"""""""""""""""""""""""""""""""""""
 " => Files and backup
 """"""""""""""""""""""""""""""""""""""
-
+"{{{
 "Turn backup off
 set nobackup
 set writebackup
 "set noswapfile
-
+"}}}
 """""""""""""""""""""""""""""""""""""""
 " => Folding
 """""""""""""""""""""""""""""""""""""""
+"{{{
 "Enable folding, I find it very useful
 "if exists("&foldenable")
 "	set foldenable
@@ -319,11 +319,11 @@ set writebackup
 "
 "set foldmethod=indent
 "set foldexpr=<Tab>
-"
+"}}}
 """"""""""""""""""""""""""""""""""""""""
 " => Text option
 """"""""""""""""""""""""""""""""""""""""
-
+"{{{
 set expandtab
 setlocal shiftwidth=4
 setlocal softtabstop=4
@@ -332,10 +332,11 @@ setlocal backspace=2
 setlocal smarttab
 setlocal lbr
 setlocal tw=500
-
+"}}}
 """"""""""""""""""""""""""""""""""""""""
 " => Indent
 """"""""""""""""""""""""""""""""""""""""
+"{{{
 "Auto indent
 set autoindent
 
@@ -347,18 +348,20 @@ set cindent
 
 "Wrap line
 set wrap
-
+"}}}
 """"""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """"""""""""""""""""""""""""""""""""""""""
+"{{{
 map <Leader>sn ]
 map <Leader>sp [
 map <Leader>sa zg
 map <Leader>s? z=
-
+"}}}
 """"""""""""""""""""""""""""""""""""""""""""
 " => File explorer
 """"""""""""""""""""""""""""""""""""""""""""
+"{{{
 "Split vertically
 let g:explVertical=1
 
@@ -373,10 +376,11 @@ let g:explHideFiles='.*.class$,.*.swp$,.*.pyc$,.*.swo$,.DS_Store$'
 
 "Hide the help thing..
 let g:explDetailedHelp=0
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " " => Minibuffer
 """"""""""""""""""""""""""""""""""""
+"{{{
 let g:miniBufExplModSelTarget = 1
 let g:miniBufExplorerMoreThanOne = 0
 let g:miniBufExplModSelTarget = 0
@@ -386,11 +390,11 @@ let g:miniBufExplVSplit = 25
 let g:miniBufExplSplitBelow=1
 
 let g:bufExplorerSortBy = "name"
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Mode Changing, Insert, Normal, Commandline, Select, Viusal, Ex
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "It can be selected by Ctrl+G in visual mode to implement the effect of mouse.
 set selectmode=mouse
 
@@ -399,10 +403,11 @@ set selectmode=mouse
 """""""""""""""""""""""""""""""""""""""""
 "remap C-] to :tjump
 nmap <C-]> :tjump <C-R>=expand("<cword>")<CR><CR>
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Cscope
 """"""""""""""""""""""""""""""""""""
+"{{{
 if has("cscope") && filereadable("cscope.out")
 	set csprg=/usr/bin/cscope
 	" set cscope quickfix, not very convenient
@@ -437,11 +442,11 @@ if has("cscope") && filereadable("cscope.out")
 	nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 	nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 endif
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Source completion
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "options for insert mode completion
 set completeopt=menu,longest
 
@@ -450,24 +455,24 @@ inoremap <expr> <CR>    pumvisible()?"\<C-Y>":"\<CR>"
 inoremap <expr> <C-J>   pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X>\<C-O>"
 inoremap <expr> <C-K>   pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
 inoremap <expr> <C-U>   pumvisible()?"\<C-E>":"\<C-U>"
-
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Quickfix
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 if has("quickfix")
 	autocmd FileType c,cpp,tex map <buffer> <Leader><Space> :write<CR>:make all<CR>:cwindow<CR><C-w>k
 	nmap <Leader>cn :cnext<CR>
 	nmap <Leader>cp :cprevious<CR>
 	nmap <Leader>cw :cw 10<CR>
 endif
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Man pages support
 """"""""""""""""""""""""""""""""""""
+"{{{
 runtime! ftplugin/man.vim
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Latex
 """"""""""""""""""""""""""""""""""""
@@ -475,7 +480,7 @@ runtime! ftplugin/man.vim
 """"""""""""""""""""""""""""""""""""
 " => Misc
 """"""""""""""""""""""""""""""""""""
-
+"{{{
 "Select all
 nmap <C-a> ggVG
 
@@ -511,32 +516,38 @@ nmap <silent> <F4>   :TlistToggle<CR>
 nmap <silent> <F9>  :vert resize +10<CR>
 
 let g:loaded_matchparen = 1
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Detect note filetype
 """"""""""""""""""""""""""""""""""""
+"{{{
 augroup filetypedetect
 	"Note filetype
 	au! BufRead,BufNewFile *.note	setfiletype note
 augroup END
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Detect notes filetype
 """"""""""""""""""""""""""""""""""""
+"{{{
 augroup filetypedetect
 	au BufNewFile,BufRead *.notes setf notes
 augroup END
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Encoding related
 """"""""""""""""""""""""""""""""""""
+"{{{
 set encoding=UTF-8
 set langmenu=zh_CN.UTF-8
 language message zh_CN.UTF-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set fileencoding=utf-8
-
+"}}}
 """"""""""""""""""""""""""""""""""""
 " => Winmanager settings
-""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""
+"{{{
 "Winmanager
 let g:winManagerWindowLayout = "FileExplorer|BufExplorer"
 nmap wm :WMToggle<cr>
@@ -548,9 +559,11 @@ let Tlist_Show_Menu=1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Exit_OnlyWindow = 1 
 map <silent> <F3> :TlistToggle<cr>
-
-let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
-
+"}}}
+""""""""""""""""""""""""""""""""""""
+" => vim vundle settings
+"""""""""""""""""""""""""""""""""""
+"{{{
 if isdirectory(expand('~/.vim/bundle/vundle'))
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
@@ -563,12 +576,18 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     Bundle 'ralph/go.vim'
     " Tab-complete your Python code.
     Bundle 'vim-scripts/Pydiction'
+    let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
     " A windows style IDE for Vim 6.0.
     Bundle 'vim-scripts/winmanager'
     " Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc).
     Bundle 'vim-scripts/taglist.vim'
 endif
+"}}}
 
+""""""""""""""""""""""""""""""""""""
+" => vim python settings, from python source
+"""""""""""""""""""""""""""""""""""
+"{{{
 let g:PythonAutoAddImports = 1
 " vimrc file for following the coding standards specified in PEP 7 & 8.
 "
@@ -637,8 +656,12 @@ au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoption
 " Python: yes
 " C: yes
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+"}}}
 
-
+""""""""""""""""""""""""""""""""""""
+" => vim rpm spec settings
+"""""""""""""""""""""""""""""""""""
+"{{{
 " ----------------------------------------------------------------------------
 " The following section contains suggested settings.  While in no way required
 " to meet coding standards, they are helpful.
@@ -690,3 +713,5 @@ function! SKEL_spec()
         exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
         setf spec
 endfunction
+"}}}
+" vim: set fdm=marker:
