@@ -581,6 +581,13 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     Bundle 'vim-scripts/winmanager'
     " Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc).
     Bundle 'vim-scripts/taglist.vim'
+    " Vim Markdown runtime files.
+    Bundle 'tpope/vim-markdown'
+    " Flake8 plugin for Vim.
+    Bundle 'nvie/vim-flake8'
+    " compiler plugin for python style checking tool.
+    Bundle 'vim-scripts/pylint.vim'
+    autocmd FileType python compiler pylint
 endif
 "}}}
 
