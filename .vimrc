@@ -551,6 +551,7 @@ set fileencoding=utf-8
 "Winmanager
 let g:winManagerWindowLayout = "FileExplorer|BufExplorer"
 nmap wm :WMToggle<cr>
+nmap <silent> <F8> :WMToggle<cr>
 
 "TagList settings
 let Tlist_Use_Right_Window=1   "show taglist in right
@@ -588,6 +589,9 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     " compiler plugin for python style checking tool.
     Bundle 'vim-scripts/pylint.vim'
     autocmd FileType python compiler pylint
+    " let g:pylint_show_rate = 0
+    let g:pylint_onwrite = 0
+    let g:pylint_cwindow = 0
 endif
 "}}}
 
