@@ -592,6 +592,8 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     " let g:pylint_show_rate = 0
     let g:pylint_onwrite = 0
     let g:pylint_cwindow = 0
+    "Automatically scrolls the window slowly so you can read a file hands-free
+    Bundle 'vim-scripts/autoscroll.vim'
 endif
 "}}}
 
