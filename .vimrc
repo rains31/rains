@@ -1,266 +1,99 @@
-""""""""""""""""""""""""""""""""""""
-" =>General settings
-""""""""""""""""""""""""""""""""""""
-"{{{
-"Set help window height
-set helpheight=15
+syntax on
+filetype plugin indent on
+if has("gui_macvim")
+    set guifont=Menlo:h12
+    set guitablabel=%t
+    set transparency=5
+    set guioptions-=T
+endif
 
-"Get out of VI's compatible mode.
+let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
+set spelllang=en
+let g:languagetool_win_height=10
+"关闭与vi兼容模:
+"式
 set nocompatible
-
-"Enable modeline
-set modeline
-
-"Enable filetype plugin
-filetype on
-if has("eval") && v:version>=600
-	filetype plugin on
-	filetype indent on
-endif
-
-"Set to auto read(read again) when a file is changed from the outside
-"(outside from the vim)
-if exists("&autoread")
-	set autoread
-endif
-
-"Have the mouse enabled only in the insert mode
-"set mouse=i
-
-"Set mapleader
-let mapleader=","
-let g:mapleader=","
-
-"Set search path
-"set path=.,~/,/usr/include/*,/etc/*,~/Projects/*
-
-"Show command in status line
-set showcmd
-
-"Allow virtual editing in Visual block mode
-set virtualedit=block
-"}}}
-""""""""""""""""""""""""""""""""""""
-"=> Colors and Font
-""""""""""""""""""""""""""""""""""""
-"{{{
-"Enable synatx hl, if the terminal supports colors
-if &t_Co > 1
-	syntax enable
-endif
-
-"Internationalizationi
-if has("multi_byte")
-	"keyboard and display works with this characters encoded in this, if
-	"empty it equals 'encoding', now we set it to encoding
-	set termencoding=&encoding
-	"set encoding to another value, used to be the locale
-	set encoding=utf-8
-	"set the character encoding for the file of this buffer
-	set fileencodings+=ucs-bom,utf-8,gbk,gb2312,big5,latin1,default
-endif
-
-"if you use vim in tty, 'uxterm -cjk' or putty with option 'Treat CJK
-"ambiguous character as wide' on
-if exists("&ambiwidth")
-	set ambiwidth=double
-endif
-
-"set the gui options
-if has("gui_running")
-	" 'm' Menu bar is present
-	set guioptions-=m
-	" 'T' Include toolbar
-	"set guioptions-=T
-	" 'l''L' Lefthand scrollbar is present
-	set guioptions-=l
-	set guioptions-=L
-	" 'r''R' Righthand scrollbar is present
-	set guioptions-=r
-	set guioptions-=R
-endif
-
-"Highlight current
-if has("gui_running")
-	if exists("&cursorline")
-		set cursorline
-	endif
-endif
-"}}}
-""""""""""""""""""""""""""""""""""""
-" => Fileformat
-""""""""""""""""""""""""""""""""""""
-"{{{
-"Favorite fileformats
-set ffs=unix,dos,mac
-"}}}
-""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-""""""""""""""""""""""""""""""""""""
-"{{{
-"Set 7 lines to the cursor - when moving vertically
-set scrolloff=7
-
-"Turn on wild menu
-set wildmenu
-
-"Always show current position
+"防止一些有关modelines的安全漏洞
+set modelines=0
+set foldlevel=99
+"设置tab键为4个空格
+set tabstop=4
+"当行之间交错时使用4个空格
+set shiftwidth=4
+set softtabstop=4
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set hidden
+set visualbell
+set cursorline
+"set cursorcolumn
+set ttyfast
 set ruler
-
-"The commandbar is 2 high
-set cmdheight=1
-
-"Show line number
-set nu
-
-"Do not redraw, when executing macros, registers and other commands that
-"have not been typed
-set lz
-
-"Change buffer - without saving
-set hid
-
-"Set backspace
-set backspace=eol,start,indent
-
-"Backspace and cursor keys wrap to
-"set whichwrap+=<,>,h,l
-set whichwrap+=<,>
-
-"Ignore case when searching
-"set ignorecase
-"have trouble when using ctags and cscope
-set noignorecase
-"If you have a pattern with at least one uppercase character, the search becomes case sensitive.
-set smartcase
-
-"The cursor will return to its original position when no match is found and when pressing <Esc>. You still need to finish the search command with
-"<Enter> to move the cursor to the match.
-set incsearch
-
-"Set magic on
-set magic
-
-"No sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-
-"Show matching bracket
-set showmatch
-
-"How many tenths of a second to blink
-set mat=4
-
-"Highlight search thing
-set hlsearch
-"}}}
-""""""""""""""""""""""""""""""""""""
-" => Statusline
-""""""""""""""""""""""""""""""""""""
-"{{{
-"Format the statusline
-"Nice statusbar
+set nolist
+set backspace=indent,eol,start
 set laststatus=2
-set statusline=
-set statusline+=%2*%-3.3n%0* " buffer number
-set statusline+=%f " file name
-set statusline+=%h%1*%m%r%w%0* " flag
-set statusline+=[
-if v:version >= 600
-	set statusline+=%{strlen(&ft)?&ft:'none'}, " filetype
-	set statusline+=%{&encoding}, " encoding
-endif
-set statusline+=%{&fileformat}] " file format
-if filereadable(expand("$VIM/vimfiles/plugin/vimbuddy.vim"))
-	set statusline+=\ %{VimBuddy()} " vim buddy
-endif
-set statusline+=%= " right align
-set statusline+=%2*0x%-8B " current char
-set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+"显示相对行号
+"set relativenumber
+set number
+set tag=tags;../tags;../../tags;../../../tags;../../../../../tags;../../../../../../tags;../../../../../../../../tags;
+"打开智能缩进。这个是vi三种缩进中最聪明的一种。对写程序很方便
+"
+set cindent shiftwidth=4
+"nmap <C-h> <Esc>:noh<cr>
+""ctrl-c，打开vi自带的简易计算器
+imap <C-c> <C-R>=
+nmap <silent><C-n> :bn<cr>
+"ctrl-p 切换到上一缓冲区
+"nmap <silent><C-p> :bp<cr>
+""ctrl-l 显示所有缓冲区
+nmap <C-l> :ls<cr>
 
-" special statusbar for special window
-if has("autocmd")
-	autocmd FileType qf
-				\ if &buftype == "quickfix" |
-				\ setlocal statusline=%2*%-3.3n%0* |
-				\ setlocal statusline+=\ \[Compiler\ Messages\] |
-				\ setlocal statusline+=%=%2*\ %<%P |
-				\ endif
+"用于cscope，当用cscope创建了tags后，在你光标所在的函数上
+""按ctrl-] ctrl-[会跳转到该函数的调用处
+map <C-]><C-[> :cs f 3 <cword><cr>
 
-	fun! FixMiniBufExplorerTitle()
-		if "-MiniBufExplorer-" == bufname("%")
-			setlocal statusline=%2*%-3.3n%0*
-			setlocal statusline+=\[Buffers\]
-			setlocal statusline+=%=%2*\ %<%P
-		endif
-	endfun
+colorscheme elflord
+"colorscheme molokai
+"colorscheme desert
+"colorscheme peachpuff
+"colorscheme torte
+"colorscheme morning
+"colorscheme koehler
+"colorscheme murphy
+"colorscheme delek
+"colorscheme ron
 
-	if v:version>=600
-		au BufWinEnter *
-					\ let oldwinnr=winnr() |
-					\ windo call FixMiniBufExplorerTitle() |
-					\ exec oldwinnr . " wincmd w"
-	endif
-endif
+"au BufWinLeave * silent mkview
+"au BufWinEnter * silent loadview
+autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
+autocmd FileType python setlocal foldmethod=indent
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+let g:flake8_builtins="_,apply"
+let g:flake8_ignore="E501"
+let g:flake8_max_line_length=99
+set t_Co=256
+let g:Powerline_symbols='unicode'
+let g:Powerline_theme='default'
+let g:fencview_autodetect = 1
+set background=dark
+" 设置编码
+"set enc=utf-8
+" 设置文件编码
+set fenc=utf-8
+"set mmp=1000
+"set mm=1000
+"set mmt=10000
+set fencs=utf-8,ucs-bom,gb2312,cp936,gbk,gb18030,big5,euc-jp,euc-kr,latin1
 
-" Nice window title
-if has('title') && (has('gui_running') || &title)
-	set titlestring=
-	set titlestring+=%f\  " file name
-	set titlestring+=%h%m%r%w " flag
-	set titlestring+=\ -\ %{v:progname} " program name
-endif
-"}}}
-""""""""""""""""""""""""""""""""""""
-" => Moving around and tab
-""""""""""""""""""""""""""""""""""""
-"{{{
-"Actually, the tab does not switch buffers, but my arrow bclose function ca be found in "Buffer related" section
 
-"Tab configuration
-map <Leader>tn :tabnew %<CR>
-map <Leader>tc :tabclose<CR>
+let g:pydiction_location = '/usr/share/pydiction/complete-dict'
+set backupcopy=auto
+setlocal backupcopy=auto
+set background=dark
 
-if v:version>=700
-	set switchbuf=usetab
-endif
+"let g:miniBufExplTabWrap = 1 " make tabs show complete (no broken on two lines)
+"call pathogen#infect()
 
-if exists("&showtabline")
-	set stal=2
-endif
-"}}}
-""""""""""""""""""""""""""""""""""""
-"Parenthesis/bracket expanding
-""""""""""""""""""""""""""""""""""""
-"{{{
-vnoremap $p <Esc>`>a)<Esc>`<i(<Esc>
-vnoremap $b <Esc>`>a]<Esc>`<i[<Esc>
-vnoremap $r <Esc>`>a}<Esc>`<i{<Esc>
-vnoremap $a <Esc>`>a><Esc>`<i<<Esc>
-vnoremap $q <Esc>`>a"<Esc>`<i"<Esc>
-vnoremap $$ <Esc>`>a'<Esc>`<i'<Esc>
-vnoremap $c <Esc>`>o*/<Esc>`<O/*<Esc>
-"}}}
-"""""""""""""""""""""""""""""""""""""
-" => General Abbrev
-""""""""""""""""""""""""""""""""""""""
-"{{{
-"My information
-iabbrev xdate <c-r>=strftime("%Y %b %d")<CR>
-"iabbrev xauthor John Hsing(douglarek@outlook.com)
-iabbrev xauthor John Hsing(douglarek@outlook.com)
-"}}}
-"""""""""""""""""""""""""""""""""""""""
-" => Editing mappings etc.
-"""""""""""""""""""""""""""""""""""""""
-"{{{
-"Move a line of text using control
-nmap <Leader>j  mz:move+<CR>`z
-nmap <Leader>k  mz:move-2<CR>`z
-vmap <Leader>j  :move'>+<CR>`<my`>mzgv`yo`z
-vmap <Leader>k  :move'<-2<CR>`>my`<mzgv`yo`z
-"}}}
 """"""""""""""""""""""""""""""""""""
 " " => General Autocommand
 """"""""""""""""""""""""""""""""""""
@@ -288,7 +121,6 @@ map <Leader>q :e ~/buffer<CR>
 set viminfo='10,f1,<500,:20,/20,h,%,n~/.viminfo
 
 " Buffer - reverse everything ... :)
-map <F9> ggVGg?
 
 "Use the arrows to something usefull
 "map <Right> :bn<CR>
@@ -300,7 +132,7 @@ map <F9> ggVGg?
 """"""""""""""""""""""""""""""""""""""
 "{{{
 "Turn backup off
-set nobackup
+"set nobackup
 set writebackup
 "set noswapfile
 "}}}
@@ -378,18 +210,15 @@ let g:explHideFiles='.*.class$,.*.swp$,.*.pyc$,.*.swo$,.DS_Store$'
 let g:explDetailedHelp=0
 "}}}
 """"""""""""""""""""""""""""""""""""
-" " => Minibuffer
-""""""""""""""""""""""""""""""""""""
 "{{{
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne = 0
-let g:miniBufExplModSelTarget = 0
-let g:miniBufExplUseSingleClick = 1
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 25
-let g:miniBufExplSplitBelow=1
-
-let g:bufExplorerSortBy = "name"
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplorerMoreThanOne = 0
+"let g:miniBufExplModSelTarget = 0
+"let g:miniBufExplUseSingleClick = 1
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplVSplit = 25
+"let g:miniBufExplSplitBelow=1
+"let g:bufExplorerSortBy = "name"
 "}}}
 """"""""""""""""""""""""""""""""""""
 " => Mode Changing, Insert, Normal, Commandline, Select, Viusal, Ex
@@ -488,33 +317,18 @@ nmap <C-a> ggVG
 imap <C-l>  <Right>
 imap <C-h>  <Left>
 
-"vimdiff
-nmap <Leader>dt :diffthis<CR>
-nmap <Leader>do :diffoff<CR>
-
 "Remove the Windows ^M
 noremap <Leader>m :%s/\r//g<CR>
 
 "Paste toggle - when pasting something in, don't indent.
 set pastetoggle=<F3>
 
-"Remove indenting on empty line
-imap <F2> <Esc>:s/\(\S*\)\s*$/\1/g<CR>:nohl<CR>i
-
-"Super paste
-inoremap <C-V> <Esc>:set paste<CR>mui<C-R>+<Esc>mv'uV'v=:set nopaste<CR>
-
 let Tlist_Enable_Fold_Column = 0     "don't show left fold line
 let Tlist_WinWidth = 20              "the width of taglist's window
 let Tlist_Show_One_File = 1          "allow taglist to show onl tag of current file 
 let g:Tb_ForceSyntaxEnable = 1
-"nmap <silent> <F2>   \di
-"nmap <silent> <F3>   \ds
-nmap <silent> <F2>   ,di
-nmap <silent> <F3>   ,ds
+nmap <silent> <F2>   :MBEToggle<CR>
 nmap <silent> <F4>   :TlistToggle<CR>
-nmap <silent> <F9>  :vert resize +10<CR>
-
 let g:loaded_matchparen = 1
 "}}}
 """"""""""""""""""""""""""""""""""""
@@ -568,7 +382,7 @@ map <silent> <F3> :TlistToggle<cr>
 if isdirectory(expand('~/.vim/bundle/vundle'))
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
-    Bundle 'gmarik/vundle'
+    Bundle 'gmarik/Vundle.vim'
     " Automatically opens popup menu for completions.
     Bundle 'vim-scripts/AutoComplPop'
     " A tree explorer plugin for vim.
@@ -585,15 +399,22 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     " Vim Markdown runtime files.
     Bundle 'tpope/vim-markdown'
     " Flake8 plugin for Vim.
-    Bundle 'nvie/vim-flake8'
+    "Bundle 'nvie/vim-flake8'
+    " powerline
+    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'tell-k/vim-autoflake'
+    Bundle 'tell-k/vim-autopep8'
+    "Bundle 'vim-scripts/vim-autoflake'
+    "Bundle 'vim-scripts/vim-autopep8'
+    "Bundle 'klen/python-mode'
     " compiler plugin for python style checking tool.
     Bundle 'vim-scripts/pylint.vim'
-    autocmd FileType python compiler pylint
-    " let g:pylint_show_rate = 0
+    "autocmd FileType python compiler pylint
+    let g:pylint_show_rate = 0
     let g:pylint_onwrite = 0
     let g:pylint_cwindow = 0
     "Automatically scrolls the window slowly so you can read a file hands-free
-    Bundle 'vim-scripts/autoscroll.vim'
+    "Bundle 'vim-scripts/autoscroll.vim'
 endif
 "}}}
 
@@ -629,7 +450,7 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
 " C: tabs (pre-existing files) or 4 spaces (new files)
 au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
 au BufRead,BufNewFile *.py,*.pyw set expandtab
-fu Select_c_style()
+fu! Select_c_style()
     if search('^\t', 'n', 150)
         set shiftwidth=8
         set noexpandtab
