@@ -36,7 +36,7 @@ draw_outline no
 draw_shades no
 use_xft yes
 xftfont Monaco:size=9
-net_avg_samples 2
+net_avg_samples 10
 no_buffers no
 out_to_console no
 out_to_stderr no
@@ -49,7 +49,7 @@ own_window_transparent yes
 own_window_argb_visual yes
 own_window_argb_value 64
 stippled_borders 0
-update_interval 2.0
+update_interval 3.0
 uppercase no
 gap_x 1000
 gap_y 25
@@ -73,24 +73,31 @@ ${color white}CPU Usage:$color $cpu% ${color white}
 ${cpubar 4}
 ${color white}$hr
 Sensors:
-$color${execi 1 x=$(sensors|grep fan);echo $x}
-$color${execi 3 x=$(acpi);echo $x}
-$color${execi 1 x=$(sensors|grep Core);echo "${x//  /}"}
+$color${execi 6 x=$(sensors|grep fan);echo $x}
+$color${execi 9 x=$(acpi);echo $x}
+$color${execi 3 x=$(sensors|grep Core);echo "${x//  /}"}
 ${color white}$hr
 ${color white}File systems:
 ${color white}/     $color${fs_used /}/${fs_size /} used. ${fs_free /} free
 ${fs_bar 6 /}
-${color white}/home $color${fs_used /home}/${fs_size /home} used. ${fs_free /} free
+${color white}/home $color${fs_used /home}/${fs_size /home} used. ${fs_free /home} free
 ${fs_bar 6 /home}
-${color white}/opt  $color${fs_used /opt}/${fs_size /opt} used. ${fs_free /} free
+${color white}/opt  $color${fs_used /opt}/${fs_size /opt} used. ${fs_free /opt} free
 ${fs_bar 6 /opt}
 ${color white}$hr
 ${color white}Networking:
-${if_up ap0}${color white}ap0:   ${addr ap0} ${color white}up:$color${upspeed ap0}${color white}down: $color${downspeed ap0}
+${color white}outside ip: ${execi 60 curl -s http://ip.zt.vc}
+${color white}gateway: default via ${gw_ip} dev ${gw_iface}
+${if_up teredo}${color white}IPv6:${execi 10 /sbin/ip -6 addr show dev teredo | grep global | awk '{print $2}'} ${color white}
+${endif}${if_up ap0}${color white}ap0:   ${addr ap0} ${color white}up:$color${upspeed ap0}${color white}down: $color${downspeed ap0}
 ${endif}${if_up tun0}${color white}tun0:  ${addr tun0} ${color white}up:$color${upspeed tun0}${color white}down: $color${downspeed tun0}
 ${endif}${if_up lan0}${color white}lan0:  ${addr lan0} ${color white}up:$color${upspeed lan0}${color white}down: $color${downspeed lan0}
 ${endif}${if_up wlan0}${color white}wlan0: ${addr wlan0} ${color white}up:$color${upspeed wlan0}${color white}down:$color${downspeed wlan0}
 ${endif}${if_up wlan1}${color white}wlan1: ${addr wlan1} ${color white}up:$color${upspeed wlan1}${color white}down:$color${downspeed wlan1}
+${endif}${if_up vboxnet0}${color white}vboxnet0: ${addr vboxnet0} ${color white}up:$color${upspeed vboxnet0}${color white}down:$color${downspeed vboxnet0}
+${endif}${if_up vmnet1}${color white}vmnet1: ${addr vmnet1} ${color white}up:$color${upspeed vmnet1}${color white}down:$color${downspeed vmnet1}
+${endif}${if_up vmnet8}${color white}vmnet8: ${addr vmnet8} ${color white}up:$color${upspeed vmnet8}${color white}down:$color${downspeed vmnet8}
+${endif}${if_up vmnet9}${color white}vmnet9: ${addr vmnet9} ${color white}up:$color${upspeed vmnet9}${color white}down:$color${downspeed vmnet9}
 ${endif}${color white}$hr
 ${color white}Name               PID   CPU%   MEM%
 ${color white}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
