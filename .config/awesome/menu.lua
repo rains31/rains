@@ -1,0 +1,156 @@
+ local menuc8205c7636e728d448c2774e6a4a944b = {
+     {"Arora", "arora ", "/usr/share/icons/hicolor/16x16/apps/arora.png" },
+     {"Avahi SSH服务器浏览器", "/usr/bin/bssh", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
+     {"Avahi VNC服务器浏览器", "/usr/bin/bvnc", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
+     {"Dropbox", "dropboxd", "/usr/share/pixmaps/dropbox.png" },
+     {"Everpad", "everpad ", "/usr/share/icons/hicolor/128x128/apps/everpad.png" },
+     {"FQTerm", "fqterm -caption \"FQTerm\"  ", "/usr/share/pixmaps/fqterm.png" },
+     {"Firefox", "/usr/lib/firefox/firefox ", "/usr/share/icons/hicolor/16x16/apps/firefox.png" },
+     {"Gajim", "gajim", "/usr/share/icons/hicolor/64x64/apps/gajim.png" },
+     {"Google Chrome", "/opt/google/chrome/google-chrome ", "/usr/share/icons/hicolor/16x16/apps/google-chrome.png" },
+     {"NixNote", "/usr/share/nixnote/nixnote.sh", "///usr/share/nixnote/nixnote.png" },
+     {"Opera", "/usr/bin/opera ", "/usr/share/icons/hicolor/16x16/apps/opera-browser.png" },
+     {"Pidgin 互联网通讯程序", "pidgin", "/usr/share/icons/hicolor/16x16/apps/pidgin.png" },
+     {"Wicd", "/usr/bin/wicd-client", "/usr/share/icons/hicolor/16x16/apps/wicd-gtk.png" },
+     {"Zenmap", "zenmap ", "///usr/share/zenmap/pixmaps/zenmap.png" },
+     {"Zenmap (as root)", "/usr/share/zenmap/su-to-zenmap.sh ", "///usr/share/zenmap/pixmaps/zenmap.png" },
+     {"gFTP", "gftp ", "/usr/share/pixmaps/gftp.png" },
+     {"wpa_gui", "wpa_gui", "/usr/share/pixmaps/wpa_gui.svg" },
+ }
+
+ local menudb53804b7d726967c58fcc8c9ca03d27 = {
+     {"Foxit Reader", "foxitreader ", "/usr/share/pixmaps/foxitreader.png" },
+     {"FreeMind-Unstable", "freemind-unstable", "/usr/share/pixmaps/freemind-unstable.png" },
+     {"Freeplane", "freeplane ", "/usr/share/pixmaps/freeplane.png" },
+     {"GeeTeeDee", "/opt/codea/geeteedee/geeteedee", "/usr/share/icons/hicolor/16x16/apps/codea-geeteedee.png" },
+     {"Master PDF Editor", "pdfeditor", "/usr/share/pixmaps/pdfeditor.png" },
+     {"Orage 全球时间", "globaltime", "/usr/share/icons/hicolor/48x48/apps/orage_globaltime.png" },
+     {"Orage 日历", "orage", "/usr/share/icons/hicolor/48x48/apps/xfcalendar.png" },
+     {"WPS 文字", "/usr/bin/wps ", "/usr/share/icons/hicolor/48x48/apps/wps-office-wpsmain.png" },
+     {"WPS 演示", "/usr/bin/wpp ", "/usr/share/icons/hicolor/48x48/apps/wps-office-wppmain.png" },
+     {"WPS 表格", "/usr/bin/et ", "/usr/share/icons/hicolor/48x48/apps/wps-office-etmain.png" },
+     {"XMind", "/usr/share/xmind/XMind", "/usr/share/pixmaps/xmind.png" },
+     {"wikidPad", "wikidpad", "/usr/share/pixmaps/wikidpad.png" },
+     {"词典", "xfce4-dict"},
+     {"项目管理", "planner ", "/usr/share/pixmaps/gnome-planner.png" },
+ }
+
+ local menue1b7cee794666669f55acead93513971 = {
+     {"Dia 图表编辑器", "dia ", "/usr/share/icons/hicolor/16x16/apps/dia.png" },
+     {"Feh", "feh ", "///usr/share/feh/images/feh.png" },
+     {"GNU 图像处理程序", "gimp-2.8 ", "/usr/share/icons/hicolor/16x16/apps/gimp.png" },
+     {"Ristretto 图片查看器", "ristretto ", "/usr/share/icons/hicolor/16x16/apps/ristretto.png" },
+     {"yEd Graph Editor", "yed ", "/usr/share/pixmaps/yed.png" },
+     {"图像查看器", "gpicview ", "/usr/share/pixmaps/gpicview.png" },
+ }
+
+ local menu526fe18cc54d217db3fdb0bf6c5e9bc8 = {
+     {"Audio Mixer", "xfce4-mixer", "/usr/share/icons/gnome/16x16/apps/multimedia-volume-control.png" },
+     {"QT V4L2 test Utility", "qv4l2", "/usr/share/icons/hicolor/16x16/apps/qv4l2.png" },
+     {"SMPlayer", "smplayer ", "/usr/share/icons/hicolor/16x16/apps/smplayer.png" },
+     {"Xfburn", "xfburn", "/usr/share/icons/gnome/16x16/devices/media-cdrom.png" },
+     {"茄子", "cheese", "/usr/share/icons/hicolor/16x16/apps/cheese.png" },
+     {"音乐播放器", "lxmusic", "/usr/share/pixmaps/lxmusic.png" },
+ }
+
+ local menuba08216f13dd1742157412386eee1225 = {
+     { "Wine Zebra", "zebra" },
+     {"Daimonin", "daimonin", "/usr/share/pixmaps/daimonin.png" },
+     {"Heroes of Newerth", "/usr/bin/hon"},
+     {"Neverwinter Nights", "nwn", "/usr/share/icons/hicolor/32x32/apps/nwn.png" },
+     {"Neverwinter Nights (Dungeon Master)", "dmclient", "/usr/share/icons/hicolor/32x32/apps/dmclient.png" },
+     {"Quarry", "quarry", "/usr/share/pixmaps/quarry.png" },
+     {"Warzone 2100", "warzone2100", "/usr/share/icons/warzone2100.png" },
+ }
+
+ local menude71492af019157e5a5ef958b570e760 = {
+     {"Avahi Zero浏览器", "/usr/bin/avahi-discover", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
+     {"Cairo-Dock (no OpenGL)", "cairo-dock -A", "/usr/share/pixmaps/cairo-dock.svg" },
+     {"Fcitx", "fcitx", "/usr/share/icons/hicolor/16x16/apps/fcitx.png" },
+     {"Fcitx (使用轻量界面)", "fcitx -u fcitx-light-ui", "/usr/share/icons/hicolor/16x16/apps/fcitx.png" },
+     {"GLX-Dock (使用 OpenGL 的 Cairo-Dock)", "cairo-dock", "/usr/share/pixmaps/cairo-dock.svg" },
+     {"GParted", "/usr/bin/gparted_polkit ", "/usr/share/icons/hicolor/16x16/apps/gparted.png" },
+     {"Grsync", "/usr/bin/grsync -i ", "/usr/share/pixmaps/grsync.png" },
+     {"LSHW", "/usr/sbin/gtk-lshw", "///usr/share/lshw/artwork/logo.svg" },
+     {"Oracle VM VirtualBox", "VirtualBox ", "/usr/share/icons/hicolor/16x16/mimetypes/virtualbox.png" },
+     {"Terminator", "terminator", "/usr/share/icons/hicolor/16x16/apps/terminator.png" },
+     {"ThinkHDAPS", "thinkhdaps", "/usr/share/pixmaps/thinkhdaps-logo.svg" },
+     {"Thunar 文件管理器", "thunar ", "/usr/share/icons/hicolor/16x16/apps/Thunar.png" },
+     {"UNetbootin", "/usr/bin/unetbootin", "/usr/share/icons/hicolor/16x16/apps/unetbootin.png" },
+     {"UXTerm", "uxterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
+     {"VMware Player", "/opt/vmware/bin/vmplayer ", "/usr/share/icons/hicolor/16x16/apps/vmware-player.png" },
+     {"VMware Workstation", "/opt/vmware/bin/vmware ", "/usr/share/icons/hicolor/16x16/apps/vmware-workstation.png" },
+     {"Wireshark", "wireshark ", "/usr/share/icons/hicolor/16x16/apps/wireshark.png" },
+     {"XTerm", "xterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
+     {"Xfce 终端", "xfce4-terminal", "/usr/share/icons/gnome/16x16/apps/utilities-terminal.png" },
+     {"dconf 系统配置编辑器", "dconf-editor", "/usr/share/icons/hicolor/16x16/apps/dconf-editor.png" },
+     {"rxvt-unicode", "urxvt", "/usr/share/pixmaps/rxvt-unicode.png" },
+     {"任务管理器", "xfce4-taskmanager", "/usr/share/icons/gnome/16x16/apps/utilities-system-monitor.png" },
+     {"任务管理器", "lxtask", "/usr/share/icons/gnome/16x16/apps/utilities-system-monitor.png" },
+     {"传感器查看器", "xfce4-sensors", "/usr/share/icons/hicolor/24x24/apps/xfce-sensors.png" },
+     {"批量重命名", "/usr/lib/Thunar/ThunarBulkRename ", "/usr/share/icons/hicolor/16x16/apps/Thunar.png" },
+     {"虚拟系统管理器", "virt-manager", "/usr/share/icons/hicolor/16x16/apps/virt-manager.png" },
+ }
+
+ local menu41282bf95e43c64d579757573a03cdde = {
+     {"Beyond Compare", "bcompare", "/usr/share/pixmaps/bcompare.png" },
+     {"CMake", "cmake-gui ", "/usr/share/pixmaps/CMakeSetup32.png" },
+     {"Geany", "geany ", "/usr/share/icons/hicolor/16x16/apps/geany.png" },
+     {"IPython2 Qt console", "ipython2 qtconsole", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
+     {"Java Monitoring and Management Console", "jconsole", "/usr/share/icons/hicolor/16x16/apps/sun-java.png" },
+     {"Java VisualVM", "jvisualvm", "/usr/share/icons/hicolor/16x16/apps/sun-java.png" },
+     {"Meld", "meld ", "/usr/share/icons/hicolor/16x16/apps/meld.png" },
+     {"Netbeans", "netbeans", "/usr/share/pixmaps/netbeans.png" },
+     {"Poedit", "poedit ", "/usr/share/icons/hicolor/16x16/apps/poedit.png" },
+     {"Qt Assistant", "/usr/lib/qt/bin/assistant", "/usr/share/icons/hicolor/32x32/apps/assistant.png" },
+     {"Qt Designer", "/usr/lib/qt/bin/designer", "/usr/share/icons/hicolor/128x128/apps/designer.png" },
+     {"Qt Linguist", "/usr/lib/qt/bin/linguist", "/usr/share/icons/hicolor/16x16/apps/linguist.png" },
+     {"Qt QDbusViewer ", "/usr/lib/qt/bin/qdbusviewer", "/usr/share/icons/hicolor/32x32/apps/qdbusviewer.png" },
+     {"Qt4 Assistant ", "assistant-qt4", "/usr/share/icons/hicolor/32x32/apps/assistant-qt4.png" },
+     {"Qt4 Designer", "designer-qt4", "/usr/share/icons/hicolor/128x128/apps/designer-qt4.png" },
+     {"Qt4 Linguist ", "linguist-qt4", "/usr/share/icons/hicolor/16x16/apps/linguist-qt4.png" },
+     {"Qt4 QDbusViewer ", "qdbusviewer-qt4", "/usr/share/icons/hicolor/32x32/apps/qdbusviewer-qt4.png" },
+     {"Wing IDE", "wingide", "/usr/share/pixmaps/wingide.png" },
+     {"ipython2", "xterm -e ipython2", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
+ }
+
+ local menu3b6fab8ae1a5e1bef9fa2320d64c4c2a = {
+     {"Onboard", "onboard"},
+ }
+
+ local menuc9a6ee90f5d43732e3f6cf4dcaa8493c = {
+     {"7-Zip FM", "7zFM", "/usr/share/icons/hicolor/32x32/apps/p7zip.png" },
+     {"Avant 窗口导航器", "avant-window-navigator", "/usr/share/icons/hicolor/24x24/apps/avant-window-navigator.png" },
+     {"IPython2 Qt console", "ipython2 qtconsole", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
+     {"KeePassX", "keepassx ", "/usr/share/pixmaps/keepassx.xpm" },
+     {"Keyboard", "matchbox-keyboard", "/usr/share/pixmaps/matchbox-keyboard.png" },
+     {"LX 终端", "lxterminal", "/usr/share/pixmaps/lxterminal.png" },
+     {"Leafpad", "leafpad ", "/usr/share/icons/hicolor/16x16/apps/leafpad.png" },
+     {"Mem Write", "lunch-memwrite", "/usr/share/pixmaps/memwrite-icon.png" },
+     {"Mousepad", "mousepad ", "/usr/share/icons/gnome/16x16/apps/accessories-text-editor.png" },
+     {"Onboard", "onboard"},
+     {"Orage 全球时间", "globaltime", "/usr/share/icons/hicolor/48x48/apps/orage_globaltime.png" },
+     {"PDF Editor", "pdfedit", "/usr/share/pixmaps/pdfedit.png" },
+     {"PDF Mod", "pdfmod ", "/usr/share/icons/hicolor/16x16/apps/pdfmod.png" },
+     {"Root 终端", "gksu -l gnome-terminal", "/usr/share/pixmaps/gksu-root-terminal.png" },
+     {"Vi IMproved", "gvim -f ", "/usr/share/pixmaps/gvim.png" },
+     {"Xarchiver", "xarchiver", "/usr/share/icons/hicolor/16x16/apps/xarchiver.png" },
+     {"ipython2", "xterm -e ipython2", "/usr/share/icons/gnome/16x16/status/gnome-netstatus-idle.png" },
+     {"字符映射表", "gucharmap", "/usr/share/icons/gnome/16x16/apps/accessories-character-map.png" },
+     {"应用程序查找器", "xfce4-appfinder", "/usr/share/icons/gnome/16x16/actions/gtk-find.png" },
+     {"截图", "xfce4-screenshooter", "/usr/share/icons/hicolor/48x48/apps/applets-screenshooter.png" },
+     {"文件管理器 PCManFM", "pcmanfm ", "/usr/share/icons/gnome/16x16/apps/system-file-manager.png" },
+ }
+
+xdgmenu = {
+    {"Internet", menuc8205c7636e728d448c2774e6a4a944b},
+    {"办公", menudb53804b7d726967c58fcc8c9ca03d27},
+    {"图像", menue1b7cee794666669f55acead93513971},
+    {"影音", menu526fe18cc54d217db3fdb0bf6c5e9bc8},
+    {"游戏", menuba08216f13dd1742157412386eee1225},
+    {"系统工具", menude71492af019157e5a5ef958b570e760},
+    {"编程", menu41282bf95e43c64d579757573a03cdde},
+    {"辅助功能", menu3b6fab8ae1a5e1bef9fa2320d64c4c2a},
+    {"附件", menuc9a6ee90f5d43732e3f6cf4dcaa8493c},
+}
+
