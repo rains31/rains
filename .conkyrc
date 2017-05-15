@@ -43,8 +43,8 @@ out_to_stderr no
 extra_newline no
 own_window yes
 own_window_class Conky
-#own_window_type desktop
-own_window_type override
+own_window_type desktop
+#own_window_type override
 own_window_transparent yes
 own_window_argb_visual yes
 own_window_argb_value 64
@@ -82,8 +82,8 @@ ${color white}/     $color${fs_used /}/${fs_size /} used. ${fs_free /} free
 ${fs_bar 6 /}
 ${color white}/home $color${fs_used /home}/${fs_size /home} used. ${fs_free /home} free
 ${fs_bar 6 /home}
-${color white}/opt  $color${fs_used /opt}/${fs_size /opt} used. ${fs_free /opt} free
-${fs_bar 6 /opt}
+${color white}/work  $color${fs_used /work}/${fs_size /work} used. ${fs_free /work} free
+${fs_bar 6 /work}
 ${color white}$hr
 ${color white}Networking:
 ${color white}outside ip: ${execi 60 curl -s http://ip.zt.vc}
