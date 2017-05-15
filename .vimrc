@@ -8,6 +8,7 @@ if has("gui_macvim")
 endif
 
 let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
+let g:flake8_cmd='flake8-python2'
 set spelllang=en
 let g:languagetool_win_height=10
 "关闭与vi兼容模:
@@ -22,7 +23,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set encoding=utf-8
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set hidden
 set visualbell
 set cursorline
@@ -65,12 +66,8 @@ colorscheme elflord
 
 "au BufWinLeave * silent mkview
 "au BufWinEnter * silent loadview
-autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-let g:flake8_builtins="_,apply"
-let g:flake8_ignore="E501"
-let g:flake8_max_line_length=99
 set t_Co=256
 let g:Powerline_symbols='unicode'
 let g:Powerline_theme='default'
@@ -87,8 +84,8 @@ set fencs=utf-8,ucs-bom,gb2312,cp936,gbk,gb18030,big5,euc-jp,euc-kr,latin1
 
 
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
-set backupcopy=auto
-setlocal backupcopy=auto
+"set backupcopy=auto
+"setlocal backupcopy=auto
 set background=dark
 
 "let g:miniBufExplTabWrap = 1 " make tabs show complete (no broken on two lines)
@@ -132,9 +129,9 @@ set viminfo='10,f1,<500,:20,/20,h,%,n~/.viminfo
 """"""""""""""""""""""""""""""""""""""
 "{{{
 "Turn backup off
-"set nobackup
-set writebackup
-"set noswapfile
+set nobackup
+"set writebackup
+set noswapfile
 "}}}
 """""""""""""""""""""""""""""""""""""""
 " => Folding
@@ -366,6 +363,7 @@ set fileencoding=utf-8
 let g:winManagerWindowLayout = "FileExplorer|BufExplorer"
 nmap wm :WMToggle<cr>
 nmap <silent> <F8> :WMToggle<cr>
+map dt :r !date --rfc-2822<C-V><C-J>-join<cr>
 
 "TagList settings
 let Tlist_Use_Right_Window=1   "show taglist in right
@@ -408,7 +406,7 @@ if isdirectory(expand('~/.vim/bundle/vundle'))
     "Bundle 'vim-scripts/vim-autopep8'
     "Bundle 'klen/python-mode'
     " compiler plugin for python style checking tool.
-    Bundle 'vim-scripts/pylint.vim'
+    "Bundle 'vim-scripts/pylint.vim'
     "autocmd FileType python compiler pylint
     let g:pylint_show_rate = 0
     let g:pylint_onwrite = 0
