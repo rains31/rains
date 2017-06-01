@@ -18,10 +18,10 @@ set nocompatible
 set modelines=0
 set foldlevel=99
 "设置tab键为4个空格
-set tabstop=4
+set tabstop=2
 "当行之间交错时使用4个空格
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set hidden

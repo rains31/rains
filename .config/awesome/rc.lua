@@ -121,12 +121,12 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.max,
     awful.layout.suit.floating,
-    --awful.layout.suit.tile,
+    awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
+    awful.layout.suit.max,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
@@ -396,34 +396,12 @@ awful.key({ modkey, "Control" }, "f",      awful.client.floating.toggle         
 awful.key({ modkey, "Control" }, "t",      awful.titlebar.toggle                     ),
 awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
 awful.key({ modkey,           }, "o",      function (c) c:move_to_screen() end),
-awful.key({ modkey,           }, "s",      function (c,s) 
-    local sel = c or client                         
-    if sel then
-        awful.client.focus.byidx(-1)
-        local sc = screen.count()
-        if not s then
-            s = sel.screen + 1 
-        end
-        if s > sc then s = 1 elseif s < 1 then s = sc end 
-        sel.screen = s 
-    end
+awful.key({ modkey,           }, "s",      function (c) 
+    c:move_to_screen()
+    awful.screen.focus_relative( 1)
 end),
-awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-awful.key({ modkey,           }, "n",
-function (c)
-    -- The client currently has the input focus, so it cannot be
-    -- minimized, since minimized clients can't have the focus.
-    c.minimized = true
-end),
-awful.key({ modkey,           }, "m",
-function (c)
-    if type(c.maximized_horizontal) == nil or type(c.maximized_vertical) == nil then
-        c.maximized_horizontal = true
-        c.maximized_vertical = true
-    end
-    --c.maximized_horizontal = not c.maximized_horizontal
-    --c.maximized_vertical   = not c.maximized_vertical
-end)
+awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop end),
+awful.key({ modkey,           }, "n", function (c) c.minimized = true end)
 )
 
 -- Bind all key numbers to tags.
@@ -487,12 +465,18 @@ awful.rules.rules = {
         properties = { 
             border_width = beautiful.border_width,
             border_color = beautiful.border_normal,
+            size_hints_honor = true,
             focus = awful.client.focus.filter,
             keys = clientkeys,
             buttons = clientbuttons,
             screen = awful.screen.preferred,
             placement = awful.placement.no_overlap+awful.placement.no_offscreen
         }
+    },
+    {
+        rule = { class = "kupfer" },
+        properties = { floating = true },
+        stopmatching = true
     },
     { 
         rule = { class = "Conky" },
@@ -524,7 +508,7 @@ awful.rules.rules = {
     },
     {
         rule = { class = "Vmware" },
-        properties = { screen = 1, tag = "2" } 
+        properties = { screen = 1, tag = "1" } 
     },
     -- Set Firefox to always map on tags number 2 of screen 1.
     --{ rule = { class = "Firefox" },
@@ -669,7 +653,6 @@ run_once_list({
     "dropbox",
     --"/usr/share/magick-rotation/magick-rotation",
     --"pcmanfm --desktop --one-screen",
-    "conky",
     --"nm-applet",
     "geeteedee",
 })
